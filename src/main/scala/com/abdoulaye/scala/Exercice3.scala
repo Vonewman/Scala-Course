@@ -49,5 +49,31 @@ object Exercice3 extends App {
   println("\n")
   println("##################################################################################")
   println("Question 3.")
+
+  // Fonction pour vérifier si une personne peut toucher à la prime
+  def peutToucherPrime(anciennete: Int, salaire: Double): Boolean = {
+    if (anciennete < 5 && salaire < 1500) {
+      true
+    } else if (anciennete >= 5 && anciennete <= 10 && salaire >= 1500 && salaire <= 2300) {
+      true
+    } else if (anciennete > 10 && (salaire < 1500 || salaire > 2300)) {
+      true
+    } else {
+      false
+    }
+  }
+
+  // Vérification pour Bernadette
+  val ancienneteBernadette = 12
+  val salaireBernadette = 2400.0
+  val peutToucherBernadette = peutToucherPrime(ancienneteBernadette, salaireBernadette)
+  println(s"Bernadette peut toucher à la prime : $peutToucherBernadette")
+
+  // Vérification pour Marc
+  val ancienneteMarc = 6
+  val salaireMarc = 1490.0
+  val peutToucherMarc = peutToucherPrime(ancienneteMarc, salaireMarc)
+  println(s"Marc peut toucher à la prime : $peutToucherMarc")
+
 }
 
